@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form test</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="pt-4"></div>
+<div class="container">
+  <div>
+  
+  </div>
+  <form method="post" autocomplete="off" name="hello-sheet">
+    <input type="text" id="พรบ"/>
+    <input type="text" id="ช่องทางร้องเรียน"/>
+    <input type="text" id="เลขรับ_สสจ"/>
+    <input type="text" id="เลขรับ_ฝ่าย"/>
+    <input type="text" id="วันที่รับเรื่อง"/>
+    <input type="text" id="ปี"/>
+    <input type="text" id="ชื่อ_สกุล_ผู้ร้องเรียน"/>
+    <input type="text" id="ที่อยู่"/>
+    <input type="text" id="เบอร์โทรติดต่อ"/>
+    <input type="text" id="เรื่อง"/>
+    <input type="text" id="การดำเนินการ"/>
+    <input type="text" id="ผลการดำเนินการ"/>
+    <input type="text" id="วันที่1"/>
+    <input type="text" id="1_รับเรื่องร้องเรียน"/>
+    <input type="text" id="วันที่2"/>
+    <input type="text" id="2_พิจารณาการฝ่าฝืน"/>
+    <input type="text" id="วันที่3"/>
+    <input type="text" id="3_ข้อมูลครบถ้วน_ไม่ต้องตรวจสถานที่"/>
+    <input type="text" id="วันที่4"/>
+    <input type="text" id="4_ข้อมูลไม่ครบถ้วน_ไม่ต้องตรวจสถานที่"/>
+    <input type="text" id="วันที่5"/>
+    <input type="text" id="5_ข้อมูลไม่ครบถ้วน _ต้องตรวจสถานที่"/>
+    <input type="text" id="วันที่6"/>
+    <input type="text" id="6_ไม่อยู่ในความรับผิดชอบ"/>
+    <input type="text" id="วันที่7"/>
+    <input type="text" id="7_การระงับเรื่องร้องเรียน"/>
+    <input type="text" id="uuid"/>
+    
+  <button type="submit" name="submit" value="Send message" class="btn btn-primary">บันทึก</button>
+</form>
+</div>
+<script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbxB0LG_rg962uBKqJnwmvXsuUzNzoG-vYNYTZ8ClSo0eVsPQiKR-96Gt5AjtBJNYGvG/exec'
+            const form = document.forms['hello-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("บันทึกข้อมูลเรียบร้อยแล้ว.."))
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+</html>
